@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import Constants from "./utilites/Constants";
 
 export default function App() {
   const [posts, setPosts] = useState([]);
 
   function getPosts() {
-    const url = 'https://localhost:7230/get-all-posts';
+    const url = Constants.API_URL_GET_ALL_POSTS;
 
     fetch(url, {
       method: 'GET'
@@ -64,6 +65,8 @@ export default function App() {
             ))}
           </tbody>
         </table>
+
+        <button onClick={() => setPosts([])} className="btn btn-dark btn-lg w-100">Empty React posts array</button>
       </div>
     )
   }
