@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import Constants from "./utilites/Constants";
 import PostCreateForm from "./components/PostCreateForm";
 import PostUpdateForm from "./components/PostUpdateForm";
@@ -87,7 +87,7 @@ export default function App() {
                 <td>{post.content}</td>
                 <td>
                   <button onClick={() => setPostCurrentlyBeingUpdated(post)} className="btn btn-dark btn-lg mx-3 my-3">Update</button>
-                  <button onClick={() => { if(window.confirm(`Are you sure you want delete post "${post.title}"?`)) deletePost(post.postId) }} className="btn btn-secondary btn-lg">Delete</button>
+                  <button onClick={() => { if (window.confirm(`Are you sure you want delete post "${post.title}"?`)) deletePost(post.postId) }} className="btn btn-secondary btn-lg">Delete</button>
                 </td>
               </tr>
 
@@ -115,19 +115,19 @@ export default function App() {
   function onPostUpdated(updatedPost) {
     setPostCurrentlyBeingUpdated(null);
 
-    if (updatedPost === null){
+    if (updatedPost === null) {
       return;
     }
 
     let postsCopy = [...posts];
 
     const index = postsCopy.findIndex((postsCopyPost, currentIndex) => {
-      if (postsCopyPost.postId === updatedPost.postId){
+      if (postsCopyPost.postId === updatedPost.postId) {
         return true;
       }
     });
 
-    if (index !== -1){
+    if (index !== -1) {
       postsCopy[index] = updatedPost;
     }
 
@@ -138,15 +138,17 @@ export default function App() {
     let postsCopy = [...posts];
 
     const index = postsCopy.findIndex((postsCopyPost, currentIndex) => {
-      if (postsCopyPost.postId === deletedPostPostId){
+      if (postsCopyPost.postId === deletedPostPostId) {
         return true;
       }
     });
 
-    if (index !== -1){
+    if (index !== -1) {
       postsCopy.splice(index, 1);
     }
 
     setPosts(postsCopy);
   }
+
+
 }
