@@ -11,6 +11,7 @@ namespace DotNetCoreTestProject.Data
                 return await db.Posts.ToListAsync();
             }
         }
+        
 
         internal async static Task<Post> GetPostByIdAsync(int postId)
         {
