@@ -19,7 +19,7 @@ namespace DotNetCoreTestProject.Data
                 {
                     PostId = i,
                     Title = $"Post {i}",
-                    Content = $"This is post {i} and that's it."
+                    Content = $"This is post {i} and that's it. Test."
                 };
             }
 
